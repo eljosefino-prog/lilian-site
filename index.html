@@ -1,30 +1,185 @@
-export default function LilianHoldingPage() {
-  return (
-    <main className="relative min-h-screen overflow-hidden bg-[#F6F8FC] text-slate-900 flex flex-col items-center justify-center px-6">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),transparent_30%),radial-gradient(circle_at_bottom,rgba(15,23,42,0.04),transparent_42%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(246,248,252,0.82),rgba(246,248,252,0.96))]" />
-      <div className="absolute inset-0 opacity-[0.028] [background-image:linear-gradient(rgba(15,23,42,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.4)_1px,transparent_1px)] [background-size:88px_88px]" />
-      <div className="absolute left-1/2 top-[16%] h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[#2557D6]/10 blur-3xl" />
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lilian</title>
+    <meta
+      name="description"
+      content="Lilian diseña y ejecuta sistemas de crecimiento comercial."
+    />
+    <style>
+      :root {
+        --bg: #f6f8fc;
+        --text: #0f172a;
+        --blue: #2557d6;
+        --muted: #64748b;
+        --line: rgba(148, 163, 184, 0.7);
+      }
 
-      <div className="relative z-10 flex min-h-screen w-full max-w-6xl flex-col items-center justify-center">
-        <section className="flex flex-1 flex-col items-center justify-center text-center">
-          <div className="mb-10 md:mb-12">
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      .page {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background:
+          radial-gradient(circle at top, rgba(37, 99, 235, 0.12), transparent 30%),
+          radial-gradient(circle at bottom, rgba(15, 23, 42, 0.04), transparent 42%),
+          linear-gradient(to bottom, rgba(246, 248, 252, 0.82), rgba(246, 248, 252, 0.96));
+      }
+
+      .page::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.028;
+        background-image:
+          linear-gradient(rgba(15, 23, 42, 0.4) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(15, 23, 42, 0.4) 1px, transparent 1px);
+        background-size: 88px 88px;
+        pointer-events: none;
+      }
+
+      .glow {
+        position: absolute;
+        left: 50%;
+        top: 16%;
+        width: min(22rem, 70vw);
+        height: min(22rem, 70vw);
+        transform: translateX(-50%);
+        border-radius: 9999px;
+        background: rgba(37, 87, 214, 0.1);
+        filter: blur(48px);
+        pointer-events: none;
+      }
+
+      .shell {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 1200px);
+        min-height: calc(100vh - 48px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .center {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .logo-wrap {
+        margin-bottom: 10px;
+      }
+
+      .logo {
+        width: min(680px, 90vw);
+        height: auto;
+        display: block;
+      }
+
+      .footer {
+        padding-bottom: 80px;
+        text-align: center;
+      }
+
+      .footer-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .mantra {
+        margin: 0;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        font-size: clamp(16px, 1.6vw, 20px);
+      }
+
+      .divider {
+        width: 96px;
+        height: 1px;
+        background: var(--line);
+      }
+
+      .email {
+        margin: 0;
+        color: rgba(100, 116, 139, 0.9);
+        letter-spacing: 0.08em;
+        font-size: clamp(14px, 1.2vw, 18px);
+      }
+
+      @media (max-width: 768px) {
+        .logo-wrap {
+          margin-bottom: 0;
+        }
+
+        .footer {
+          padding-bottom: 56px;
+        }
+
+        .footer-inner {
+          gap: 18px;
+        }
+
+        .mantra {
+          letter-spacing: 0.22em;
+          line-height: 1.5;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="glow"></div>
+
+      <div class="shell">
+        <section class="center">
+          <div class="logo-wrap">
             <svg
               viewBox="0 0 820 180"
-              className="h-[78px] w-[360px] md:h-[148px] md:w-[680px]"
+              class="logo"
               aria-label="Lilian"
               role="img"
             >
               <text
                 x="50%"
                 y="50%"
-                dominantBaseline="middle"
-                textAnchor="middle"
+                dominant-baseline="middle"
+                text-anchor="middle"
                 fill="#2557D6"
-                fontSize="132"
-                fontWeight="500"
-                letterSpacing="0.06em"
-                style={{ fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', textRendering: 'geometricPrecision' }}
+                font-size="132"
+                font-weight="500"
+                letter-spacing="0.06em"
+                style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; text-rendering: geometricPrecision;"
               >
                 <tspan>Lil</tspan>
                 <tspan dx="-0.02em">ia</tspan>
@@ -34,18 +189,14 @@ export default function LilianHoldingPage() {
           </div>
         </section>
 
-        <footer className="relative z-10 pb-20 text-center">
-          <div className="flex flex-col items-center gap-6">
-            <p className="text-base md:text-lg uppercase tracking-[0.28em] text-slate-500">
-              Ordena - Ejecuta - Crece
-            </p>
-            <div className="h-px w-24 bg-slate-300/70" />
-            <p className="text-sm md:text-base tracking-[0.08em] text-slate-500/90">
-              contacto@lilian.cl
-            </p>
+        <footer class="footer">
+          <div class="footer-inner">
+            <p class="mantra">Ordena - Ejecuta - Crece</p>
+            <div class="divider"></div>
+            <p class="email">contacto@lilian.cl</p>
           </div>
         </footer>
       </div>
     </main>
-  );
-}
+  </body>
+</html>
