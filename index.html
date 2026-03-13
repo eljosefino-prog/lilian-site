@@ -1,0 +1,51 @@
+export default function LilianHoldingPage() {
+  return (
+    <main className="relative min-h-screen overflow-hidden bg-[#F6F8FC] text-slate-900 flex flex-col items-center justify-center px-6">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),transparent_30%),radial-gradient(circle_at_bottom,rgba(15,23,42,0.04),transparent_42%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(246,248,252,0.82),rgba(246,248,252,0.96))]" />
+      <div className="absolute inset-0 opacity-[0.028] [background-image:linear-gradient(rgba(15,23,42,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.4)_1px,transparent_1px)] [background-size:88px_88px]" />
+      <div className="absolute left-1/2 top-[16%] h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[#2557D6]/10 blur-3xl" />
+
+      <div className="relative z-10 flex min-h-screen w-full max-w-6xl flex-col items-center justify-center">
+        <section className="flex flex-1 flex-col items-center justify-center text-center">
+          <div className="mb-10 md:mb-12">
+            <svg
+              viewBox="0 0 820 180"
+              className="h-[78px] w-[360px] md:h-[148px] md:w-[680px]"
+              aria-label="Lilian"
+              role="img"
+            >
+              <text
+                x="50%"
+                y="50%"
+                dominantBaseline="middle"
+                textAnchor="middle"
+                fill="#2557D6"
+                fontSize="132"
+                fontWeight="500"
+                letterSpacing="0.06em"
+                style={{ fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', textRendering: 'geometricPrecision' }}
+              >
+                <tspan>Lil</tspan>
+                <tspan dx="-0.02em">ia</tspan>
+                <tspan dx="0.02em">n</tspan>
+              </text>
+            </svg>
+          </div>
+        </section>
+
+        <footer className="relative z-10 pb-20 text-center">
+          <div className="flex flex-col items-center gap-6">
+            <p className="text-base md:text-lg uppercase tracking-[0.28em] text-slate-500">
+              Ordena - Ejecuta - Crece
+            </p>
+            <div className="h-px w-24 bg-slate-300/70" />
+            <p className="text-sm md:text-base tracking-[0.08em] text-slate-500/90">
+              contacto@lilian.cl
+            </p>
+          </div>
+        </footer>
+      </div>
+    </main>
+  );
+}
